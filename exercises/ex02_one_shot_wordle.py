@@ -23,7 +23,7 @@ if len(guess_word) == right_len:
         else:
             chr_exists: bool = False
             alt_i: int = 0
-            while (chr_exists == False) and alt_i < len(right_word):
+            while (not chr_exists) and alt_i < len(right_word):
                 if right_word[alt_i] == guess_word[i]:
                     chr_exists = True
                     # This won't be true the first time the while loop is read
@@ -31,7 +31,7 @@ if len(guess_word) == right_len:
                     # The index will have to be changed in the else block, which makes sense when looking for a yellow box
                 else:
                     alt_i = alt_i + 1
-            if chr_exists == True:
+            if chr_exists:
                 emoji = emoji + yellow_box
             else:
                 emoji = emoji + white_box
@@ -44,4 +44,3 @@ if len(guess_word) == right_len:
     else:
         # Anything other than a perfect match
         print("Not quite. Play again soon!")
-
