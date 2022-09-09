@@ -3,7 +3,7 @@ __author__ = "730556073"
 
 
 def contains_char(word: str, char: str) -> bool:
-    """Checks whether or not the character argument is found in the word"""
+    """Checks whether or not the character argument is found in the word."""
     assert len(char) == 1
     i: int = 0
     while i < len(word):
@@ -14,8 +14,9 @@ def contains_char(word: str, char: str) -> bool:
         i = i + 1
     return False
 
+
 def emojified(guess: str, secret: str) -> str:
-    """Compares guess word and secret word indices, returning the right emoji box"""
+    """Compares guess word and secret word indices, returning the right emoji box."""
     assert len(guess) == len(secret)
     white_box: str = "\U00002B1C"
     green_box: str = "\U0001F7E9"
@@ -38,12 +39,14 @@ def emojified(guess: str, secret: str) -> str:
         # Incrementation keeps loop from being infinite and checks all characters in the guess word against the secret 
     return emoji
 
+
 def input_guess(exp_len: int) -> str:
     """Prints out a guess of correct length, prompting until that length is given."""
     guess_word: str = input(f"Enter a {exp_len}-character word: ")
     while len(guess_word) != exp_len:
         guess_word = input(f"That wasn't {exp_len} chars! Try again: ")
     return guess_word
+
 
 def main() -> None:
     """The entry point of the program and main game loop."""
@@ -71,6 +74,7 @@ def main() -> None:
         return print(loss_string)
     # Above if/else statement lets the user know either how quick they won,
     # Or the fact that they lost
+
 
 if __name__ == "__main__":
     main()
