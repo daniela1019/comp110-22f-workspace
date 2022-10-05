@@ -13,7 +13,9 @@ def only_evens(nums: list[int]) -> list[int]:
 
 def concat(xs: list[int], ys: list[int]) -> list[int]:
     """Given 2 lists, returns the list concatenating the givens."""
-    concated: list[int] = xs
+    concated: list[int] = []
+    for x in xs:
+        concated.append(x)
     for y in ys:
         concated.append(y)
     return concated
