@@ -13,10 +13,10 @@ GAME_EMOJIS: str = "\U00000000"
 def greet() -> None:
     """Begins the game by asking the user their name and if they wish to play."""
     global player
-    player = input(f"Welcome to the Genie Guesser. What is your name? ")
+    player = input("Welcome to the Genie Guesser. What is your name? ")
     decision: str = input(f"Greetings, {player}. I am the all-knowing Guessia\U0001F9DE. Do you dare read my mind?? Type yes/no: ")
     if decision == "no":
-        print(f"I see you've made your decision\U0001F58B  Goodbye.")
+        print("I see you've made your decision\U0001F58B  Goodbye.")
         quit()
 
 
@@ -34,7 +34,7 @@ def correct_guess_message(end_guess_count: int) -> str:
 def wrong_guess_message() -> str:
     """Chooses a random message to output to the player when they get a wrong guess."""
     wrong_messages: list[str] = ["Is this all you got\U0001F928", "Wow... didn't think humans could be this slow. Try again.", "Wake me up when you guess correctly\U0001F634", "Nope\U0001F611"]
-    return wrong_messages[randint(0,3)]
+    return wrong_messages[randint(0, 3)]
 
 
 def main() -> None:
@@ -65,7 +65,7 @@ def main() -> None:
             correct = True
         points += 1
     if player_guess == genies_number:
-            print(correct_guess_message(points))
+        print(correct_guess_message(points))
 
 
 if __name__ == "__main__":
